@@ -9,6 +9,9 @@ import VacationRental from './VacationRental';
  * @return {JSX} The rendered vacation rentals
  */
 function App() {
+  // const [shoppingCart, updateShoppingCart] = useState([]);
+  // updateShoppingCart = (eachRental) => shoppingCart.push(eachRental);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -27,8 +30,14 @@ function App() {
       </header>
       <main>
         <div className="App">
-          {bnbs.map(VacationRental)}
-          <p>pizza</p>
+          {bnbs.map((rental, rentalIndex) => (
+            <VacationRental
+              key={rentalIndex}
+              index={rentalIndex}
+              element={rental}
+              cost={rental.payment.cost}>
+            </VacationRental>
+          ))}
         </div>
       </main>
     </div>
