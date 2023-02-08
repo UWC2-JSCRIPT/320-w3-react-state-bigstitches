@@ -1,7 +1,7 @@
 import './VacationRental.css';
 import React from 'react';
 import shoppingCart from './cart-shopping-solid.svg';
-import PropTypes from 'prop-types'; // imported because eslint is giving errors
+import PropTypes from 'prop-types'; 
 
 // class constructor allows missing @returns tag
 /**
@@ -59,8 +59,8 @@ class Shopping extends React.Component {
   }
 }
 
-ShoppingCart.defaultProps = {rentalPrice: 0}; // eslint is evil
-ShoppingCart.propTypes = {rentalPrice: PropTypes.number}; // just the worst
+ShoppingCart.defaultProps = {shoppingCart: []};
+ShoppingCart.propTypes = {shoppingCart: PropTypes.array};
 
 
 export default ShoppingCart;
