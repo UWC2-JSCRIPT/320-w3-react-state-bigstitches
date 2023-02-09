@@ -53,6 +53,7 @@ function VacationRental(props) {
       <Cart
         rentalCost = {props.cost}
         cartChange = {() => setCart((inCart) => {
+          // not dependant on state change
           mountedRef.current = true;
           return !inCart;
         })}

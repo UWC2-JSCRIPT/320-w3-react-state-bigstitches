@@ -15,29 +15,47 @@ import ShoppingCartFunction from './ShoppingCartFunction';
 function App() {
   const [shoppingCart, modCart] = useState([{title: 'empty'}]);
   /**
+   * local function to keep cart unique items only
+   * @param {object} value element of array
+   * @param {number} index index of element
+   * @param {array} self whole array
+   * @return {array} unique item
+   */
+  function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+  }
+  /**
+   * local function to keep cart unique items only
+   * @param {object} value element of array
+   * @param {number} index index of element
+   * @param {array} self whole array
+   * @return {bool} unique item
+   */
+  let refModLocalArray;
+  /**
    * Change the state of the cart depnding
-   *
    * @param {object} vacaElement element to add or remove
    * @param {boolean} boolInCart true ? add : remove
    */
   function refModCart(vacaElement, boolInCart) {
     if (boolInCart) {
       if (shoppingCart[0].title === 'empty') {
-        modCart([vacaElement]); // simple replace
+        refModLocalArray = ([vacaElement]); // simple replace
       } else {
-        modCart(shoppingCart.concat(shoppingCart,
+        refModLocalArray = (shoppingCart.concat(shoppingCart,
             [vacaElement]));
       }
     } else {
       if (shoppingCart.length === 1) {
-        modCart([{title: 'empty'}]);
+        refModLocalArray = [[{title: 'empty'}]];
       } else {
-        modCart(
-            shoppingCart.filter((a) => {
-              return a.title !== vacaElement.title;
-            }));
+        refModLocalArray = (
+          shoppingCart.filter((a) => {
+            return a.title !== vacaElement.title;
+          }));
       }
     }
+    modCart(refModLocalArray.filter(onlyUnique));
   }; // end function refModCart(vacaElement)
   /**
    * @return {jsx} vacation
@@ -65,15 +83,5 @@ function App() {
     </div>
   );
 }
-
-/**
- * {shoppingCart.map((itemInCart, itemIndex) => (
-            <ShoppingCartFunction
-              rentalInCart = {itemInCart}
-              index={itemIndex}
-              key={itemIndex}>
-            </ShoppingCartFunction>
-          ))}
- */
 
 export default App;
