@@ -2,7 +2,7 @@ import './VacationRental.css';
 import React from 'react';
 import shoppingCart from './cart-shopping-solid.svg';
 import inShoppingCart from './cart-arrow-down-solid.svg';
-import PropTypes from 'prop-types'; // imported because eslint is giving errors
+import PropTypes from 'prop-types';
 /**
  * Cart Component as CLASS that shows cart empty or full
  * Cost of each rental is stored in Cart's state
@@ -25,8 +25,6 @@ class Cart extends React.Component {
     this.setState((props) => ({
       rentalCost: this.props.rentalCost,
     }));
-    // console.log(`Undefined here but not in jsx? ${this.state.rentalCost}`);
-    // console.log('Cart (img) Component Mounted');
   }
   /**
   * Button is a full or empty cart depending on the passed method, 'cartChange'
@@ -55,15 +53,11 @@ Cart.propTypes = {
   rentalCost: PropTypes.number,
   inCart: PropTypes.bool,
   cartChange: PropTypes.func,
-  // updateCart: PropTypes.func,
-  // vacaRental: PropTypes.object,
-}; // establish types to avoid eslint error
+}; // establish types
 Cart.defaultProps = {
   inCart: false,
   cartChange: () => boolean,
   rentalCost: 0,
-  // updateCart: () => [],
-  // vacaRental: {},
-}; // establish default values to avoid eslint error
+}; // establish default values
 
 export default Cart;

@@ -2,8 +2,8 @@ import './VacationRental.css';
 import React, {useState} from 'react';
 import {useEffect} from 'react';
 import {useRef} from 'react';
-import Cart from './Cart'; // class component
-import PropTypes from 'prop-types'; // imported because eslint is giving errors
+import Cart from './Cart'; // class component to practice...
+import PropTypes from 'prop-types';
 /**
  * Set up app for vacation rental that takes in four props
  * from the App component:
@@ -48,7 +48,8 @@ function VacationRental(props) {
    */
   return (
     <div key={props.index} className="Vaca">
-      <p>{title}, {houseType}, {image}</p>
+      <p>{title}, {houseType}</p>
+      <img src={image} alt='Picture of the Rental'></img>
       <p>{props.element.title}</p>
       <Cart
         rentalCost = {props.cost}

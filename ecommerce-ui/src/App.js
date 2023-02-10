@@ -1,8 +1,10 @@
 // import logo from './logo.svg';
 import './App.css';
-import bnbs from './bnbs.json';
+import bnbs from './rental_data/bnbs.json';
 import React, {useState} from 'react';
 import VacationRental from './VacationRental';
+// import RentalForm from './RentalForm';
+import NewRental from './NewRental';
 import ShoppingCartFunction from './ShoppingCartFunction';
 
 /**
@@ -47,7 +49,7 @@ function App() {
       }
     } else {
       if (shoppingCart.length === 1) {
-        refModLocalArray = [[{title: 'empty'}]];
+        refModLocalArray = [{title: 'empty'}];
       } else {
         refModLocalArray = (
           shoppingCart.filter((a) => {
@@ -74,11 +76,15 @@ function App() {
             </VacationRental>
           ))}
         </div>
+        {/* <div className="App">
+          <RentalForm updateCart = {refModCart}></RentalForm>
+          </div> */}
         <div className="App">
           <ShoppingCartFunction
             rentalsInCart = {shoppingCart}>
           </ShoppingCartFunction>
         </div>
+        <NewRental updateCart = {refModCart}/>
       </main>
     </div>
   );
