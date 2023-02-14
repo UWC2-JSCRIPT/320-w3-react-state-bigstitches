@@ -1,0 +1,33 @@
+.Vaca {
+  text-align: center;
+}
+
+.Vaca-cart {
+  height: 4vmin;
+  color: black;
+}
+
+img {
+  height: 10vmax;
+}
+
+a:hover {
+  color: turquoise;
+}
+
+
+.Vaca-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Vaca-link {
+  color: #61dafb;
+}
+
