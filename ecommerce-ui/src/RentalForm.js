@@ -50,27 +50,39 @@ function RentalForm(props) {
           Shared/Partial
         </label>
       </p>
-      <label>
-        Image URL: <input name="imageUrl" defaultValue="" />
-      </label>
-      <label>
-        Free Cancellation?: <input
-          type="checkbox"
-          name="freeCancel"
-          defaultChecked={true} />
-      </label>
-      <label>
-        Price per Night: <input name="cost" defaultValue="0" />
-      </label>
-      <label>
-        City: <input name="city" defaultValue="Ottawa" />
-      </label>
-      <label>
-        Country: <input name="country" defaultValue="Canada" />
-      </label>
-      <label>
-        Host Name: <input name="name" defaultValue="Bill George" />
-      </label>
+      <p>
+        <label>
+          Image URL: <input name="imageUrl" defaultValue="" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Free Cancellation?: <input
+            type="checkbox"
+            name="freeCancel"
+            defaultChecked={true} />
+        </label>
+      </p>
+      <p>
+        <label>
+          Price per Night: <input name="cost" defaultValue="0" />
+        </label>
+      </p>
+      <p>
+        <label>
+          City: <input name="city" defaultValue="Ottawa" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Country: <input name="country" defaultValue="Canada" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Host Name: <input name="name" defaultValue="Bill George" />
+        </label>
+      </p>
       <button type="reset">Reset form</button>
       <button type="submit">Submit form</button>
     </form>

@@ -1,9 +1,7 @@
-// import logo from './logo.svg';
 import './App.css';
 import bnbs from './rental_data/bnbs.json';
 import React, {useState} from 'react';
 import VacationRental from './VacationRental';
-// import RentalForm from './RentalForm';
 import NewRental from './NewRental';
 import ShoppingCartFunction from './ShoppingCartFunction';
 
@@ -63,9 +61,17 @@ function App() {
    * @return {jsx} vacation
    */
   return (
-    <div className="App">
-      <main>
-        <div className="App">
+    <div>
+      <main className="App">
+        <div className="App-header">
+          <h1>Assignment 3</h1>
+        </div>
+        <div className="App-cart">
+          <ShoppingCartFunction
+            rentalsInCart = {shoppingCart}>
+          </ShoppingCartFunction>
+        </div>
+        <div className='App-rentals'>
           {bnbs.map((rental, rentalIndex) => (
             <VacationRental
               key={rentalIndex}
@@ -76,15 +82,9 @@ function App() {
             </VacationRental>
           ))}
         </div>
-        {/* <div className="App">
-          <RentalForm updateCart = {refModCart}></RentalForm>
-          </div> */}
-        <div className="App">
-          <ShoppingCartFunction
-            rentalsInCart = {shoppingCart}>
-          </ShoppingCartFunction>
+        <div className= 'App-form'>
+          <NewRental updateCart = {refModCart}/>
         </div>
-        <NewRental updateCart = {refModCart}/>
       </main>
     </div>
   );

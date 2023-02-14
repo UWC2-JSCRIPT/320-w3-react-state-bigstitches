@@ -48,9 +48,9 @@ function VacationRental(props) {
    */
   return (
     <div key={props.index} className="Vaca">
-      <p>{title}, {houseType}</p>
+      <p>{houseType}</p>
       <img src={image} alt='Picture of the Rental'></img>
-      <p>{props.element.title}</p>
+      <p>{title}</p>
       <Cart
         rentalCost = {props.cost}
         cartChange = {() => setCart((inCart) => {
